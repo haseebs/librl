@@ -1,6 +1,6 @@
 # Skeleton Codebase for RL Experiments (Hydra • Submitit • MariaDB)
 
-A lightweight, extensible template for running large-scale reinforcement learning (RL) experiments with structured configuration, sweep execution (local or Slurm), and automatic logging to MySQL/MariaDB. Notebooks are provided for result retrieval and visualization. This codebase was used for experiments in our ICLR 2025 paper **[q-Exponential Family For Policy Optimization](https://proceedings.iclr.cc/paper_files/paper/2025/file/6507b115562bb0a305f1958ccc87355a-Paper-Conference.pdf).**
+A lightweight, extensible template for running large-scale reinforcement learning (RL) experiments with structured configuration, sweep execution (local or Slurm), and automatic logging to MySQL/MariaDB. Notebooks are provided for result retrieval and visualization. This codebase was used for online RL experiments in our ICLR 2025 paper **[q-Exponential Family For Policy Optimization](https://proceedings.iclr.cc/paper_files/paper/2025/file/6507b115562bb0a305f1958ccc87355a-Paper-Conference.pdf).**
 
 ---
 
@@ -152,7 +152,7 @@ Contributions are welcome!
 
 ## Citation
 
-If this repository helps your research, consider citing the following:
+If you found our work helpful in your research, you may cite the following if you need:
 
 ```bibtex
 @inproceedings{ICLR2025_6507b115,
