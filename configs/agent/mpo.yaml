@@ -1,0 +1,13 @@
+defaults:
+  - actor: gaussian
+  - critic: q_net
+  - buffer: basic_buffer
+  - _self_
+
+name: mpo
+
+gamma: 0.95
+alpha: 0.1 # KL coef
+n_action_proposals: 30
+rho: 0.1 
+store_old_policy: False

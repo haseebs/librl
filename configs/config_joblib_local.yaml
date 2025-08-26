@@ -1,0 +1,34 @@
+# For a sweep: 'python main.py -m -cn config_name'
+# Ignoring the sweeper: 'python main.py'
+
+defaults:
+  - db: credentials-local
+  - schema: default-schema
+  - agent: sac
+  - env: gym-mountaincar-continuous
+  - agent/sweepers@hydra.sweeper.params: base_sweeper # removing this will force usage of default hypers
+  - override hydra/launcher: joblib # this one is good for running parallel experiments locally or on a single big node
+  - override hydra/job_logging: default
+  - _self_
+
+
+run: 4000 # run id of first experiment in the sweep. Must be unique within a <db_name>
+db_prefix: hshah1 # if db is on CC, this must be your username
+db_name: 308_sac_mc_allpolicy_sweep_fixed_policies_fill307
+seed: 1337 # ignored in sweep
+steps: 300000
+learning_starts: 0
+evaluation_steps: 10000 # evaluate every x steps
+evaluation_episodes: 3 # how many episodes we want to avg over
+n_threads: 1 # threads per experiment
+device: cpu # or cuda (cuda untested)
+
+# Note: will not sweep without -m arg
+hydra:
+# mode: MULTIRUN
+ launcher:
+   n_jobs: 11
+ sweeper:
+   params:
+     seed: range(0,10)
+     agent/actor: gaussian, beta, squashed_gaussian, student, q_gaussian, heavytailed_gaussian 

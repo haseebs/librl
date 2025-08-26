@@ -1,0 +1,11 @@
+mysql-connector-python
+hydra-core
+IPython
+hydra-joblib-launcher
+torch
+numpy
+black
+gymnasium
+rich
+jaxtyping
+hydra-submitit-launcher

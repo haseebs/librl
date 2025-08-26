@@ -1,0 +1,3 @@
+gym: True
+name: MountainCarContinuous-v2
+max_episode_steps: 1000

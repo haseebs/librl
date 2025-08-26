@@ -1,0 +1,47 @@
+# For a sweep: 'python main.py -m -cn config_name'
+# Ignoring the sweeper: 'python main.py'
+
+defaults:
+  - db: credentials-narvaldb
+  - schema: default-schema
+  - agent: sac
+  - env: gym-mountaincar-continuous
+  - agent/sweepers@hydra.sweeper.params: base_sweeper  # removing this will force usage of default hypers
+  - override hydra/launcher: submitit_slurm
+  - override hydra/job_logging: default
+  - _self_
+
+
+run: 0
+db_prefix: hshah1
+db_name: 204_sac_mountaincar_allpolicy_sweep
+seed: 1337
+steps: 300000
+learning_starts: 0
+evaluation_steps: 10000 # evaluate every x steps
+evaluation_episodes: 3 # how many episodes we want to avg over
+n_threads: 1
+device: cpu # or cuda
+
+# Note: will not sweep without -m arg
+hydra:
+# mode: MULTIRUN
+ launcher:
+   name: ${hydra.job.name}
+   timeout_min: 59
+   account: def-whitem
+   nodes: 1
+   tasks_per_node: 1
+   cpus_per_task: 1
+   gpus_per_node: null
+   mem_per_cpu: 3G
+   array_parallelism: 900
+   setup:
+     - ssh -fNT narval2 -L 3306:198.168.186.104:3306
+     - module load python/3.10
+     - module load StdEnv/2020 mariadb/10.6.12
+     - source /home/hshah1/scratch/librl/bin/activate
+ sweeper:
+   params:
+     seed: range(0,10)
+     agent/actor: student, heavytailed_gaussian

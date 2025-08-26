@@ -1,0 +1,3 @@
+gym: False
+name: AcrobotContinuous
+max_episode_steps: 1000

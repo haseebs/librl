@@ -1,0 +1,2 @@
+# Exclude from stats and hide in diffs by default
+notebooks/*.ipynb linguist-generated

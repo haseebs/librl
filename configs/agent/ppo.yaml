@@ -1,0 +1,17 @@
+defaults:
+  - actor: gaussian
+  - critic: v_net
+  - buffer: rollout_buffer
+  - _self_
+
+name: ppo
+
+episode_steps: 1000
+training_epochs: 10
+clip_vloss: True
+gamma: 0.99
+vloss_coef: 0.5
+entropy_coef: 0.01
+eps_clip: 0.2
+store_old_policy: False
+minibatches: 4

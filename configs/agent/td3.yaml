@@ -1,0 +1,13 @@
+defaults:
+  - actor: gaussian
+  - critic: td3_q_net
+  - buffer: basic_buffer
+  - _self_
+
+name: td3
+
+gamma: 0.99
+exploration_noise: 0.1
+policy_noise: 0.2
+noise_clip: 0.5
+store_old_policy: False
