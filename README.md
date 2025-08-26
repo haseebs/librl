@@ -20,7 +20,6 @@ A lightweight, extensible template for running large-scale reinforcement learnin
 | **Run (Slurm)**   | submitit configs                   | Example: `python main.py -m -cn config_submitit_cedar run=0`; remove `-m` for a single run.                                                |
 | **Analysis**      | `notebooks/`                       | Example notebooks to retrieve & visualize results.                                                                                         |
 
-
 ## Requirements
 
 * **Python 3.10 or newer.** Some features rely on Python ≥3.10.
@@ -134,6 +133,7 @@ Policy heads/modules under `models/policy_parameterizations/`:
 ## Adding Environments
 
 If your environment is a **Gymnasium** environment, you only need to add a config file under [`configs/env/`](configs/env). The environment will be initialized via the factory in [`environments/factory.py`](environments/factory.py).
+Note that this codebase is tested only on gymnasium classical control. It may or may not work with other environments with multi-dimensional action space (though the changes necessary wouldn't be big).
 
 ## Troubleshooting
 
