@@ -151,10 +151,6 @@ Contributions are welcome!
 * **Bugs & features:** Please open an issue to report bugs or request features. For larger changes, start a discussion first to align on scope and design.
 * **Pull requests:** Keep PRs focused and well-described. Where applicable, update docs/examples and include a minimal reproduction if you change experiment logic.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Citation
 
 If this repository helps your research, please cite the ICLR 2025 paper below:
