@@ -153,7 +153,7 @@ Contributions are welcome!
 
 ## Citation
 
-If this repository helps your research, please cite the ICLR 2025 paper below:
+If this repository helps your research, consider citing the following:
 
 ```bibtex
 @inproceedings{ICLR2025_6507b115,
