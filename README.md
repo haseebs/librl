@@ -1,6 +1,6 @@
 # Skeleton Codebase for RL Experiments (Hydra • Submitit • MariaDB)
 
-A lightweight, extensible template for running large-scale reinforcement learning (RL) experiments with structured configuration, sweep execution (local or Slurm), and automatic logging to MySQL/MariaDB. Notebooks are provided for result retrieval and visualization.
+A lightweight, extensible template for running large-scale reinforcement learning (RL) experiments with structured configuration, sweep execution (local or Slurm), and automatic logging to MySQL/MariaDB. Notebooks are provided for result retrieval and visualization. This codebase was used for experiments in the ICLR 2025 paper **“q-exponential family for policy optimization.”**
 
 ---
 
@@ -20,7 +20,6 @@ A lightweight, extensible template for running large-scale reinforcement learnin
 | **Run (Slurm)**   | submitit configs                   | Example: `python main.py -m -cn config_submitit_cedar run=0`; remove `-m` for a single run.                                                |
 | **Analysis**      | `notebooks/`                       | Example notebooks to retrieve & visualize results.                                                                                         |
 
-This codebase was used for experiments in the ICLR 2025 paper **“q-exponential family for policy optimization.”**
 
 ## Requirements
 
