@@ -49,6 +49,10 @@ Set `db_prefix` to your username in [`configs/config.yaml`](configs/config.yaml)
 
 The schema used for logging is defined in [`configs/schema/default-schema.yaml`](configs/schema/default-schema.yaml).
 
+#### Not using the database
+
+If you do not want to log to a database server, you can remove the `ExperimentManager` and `Metric` from `main.py` and use your own logger. This is the only place where the database is referenced.
+
 ## Running Experiments
 
 #### Quick test (single run)
